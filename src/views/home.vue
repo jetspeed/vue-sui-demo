@@ -4,11 +4,17 @@
     <v-layer></v-layer>
     <slider :banner="banner"></slider>
     <bar class="home-bar">
-      <bar-item path="/rank" label="排行榜" icon="rank"></bar-item>
-      <bar-item path="/user/tasks" label="我的任务" icon="task"></bar-item>
-      <bar-item path="/invite" label="邀请有奖" icon="invitefriend"></bar-item>
-    </bar>
-      <v-content type="block-title" style="margin: 0 0 0.4rem;
+      <bar-item path="/tasks" label="我的待办" icon="task"></bar-item>
+      <bar-item path="/rank" label="资金支付" icon="withdraw"></bar-item>
+      <bar-item path="/invite" label="同业存放" icon="shouyi"></bar-item>
+      </bar>
+      <bar class="home-bar">
+      <bar-item path="/user/tasks" label="项目管理" icon="dianji"></bar-item>
+      <bar-item path="/rank" label="授信管理" icon="preview"></bar-item>
+      <bar-item path="/invite" label="合同签订" icon="invitefriend"></bar-item>
+      </bar>
+
+      <!--v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">
       <btn style="float:left;margin: .4rem 0 .3rem .6rem;border:0;color:#6d6d72;padding:0">
       任务推荐
@@ -18,8 +24,8 @@
         v-link="{path: '/tasks', replace: true}">
         更多任务
       </btn>
-    </v-content>
-    <div class="card-container">
+    </v-content-->
+    <!--div class="card-container">
       <v-card-container v-for="task in tasks | orderBy 'created' -1"
       :style="{backgroundColor: task.status === '1' ? 'white': 'rgb(224, 224, 224)' }">
         <card type="content">
@@ -45,7 +51,7 @@
           <span :style="{color: task.status === '1' ? 'orange': 'gray',fontWeight:'bold'}">{{task.read_profit}} 积分</span>
         </card>
       </v-card-container>
-    </div>
+    </div-->
   </div>
 </div>
 </div>

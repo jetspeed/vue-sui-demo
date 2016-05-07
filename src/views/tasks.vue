@@ -9,21 +9,21 @@
     </v-button> -->
   </nav>
   <v-tabs type="tab" class-name="article-tabs">
-    <v-tab name="timer-tasks" title="限时任务" status="active"
+    <v-tab name="timer-tasks" title="我的待办" status="active"
     distance="55" v-pull-to-refresh="refreshAll">
       <v-layer></v-layer>
       <div class="allTasks">
           <v-card-container>
-            <card type="header">card1</card>
+            <card type="header">资金支付</card>
             <card type="content">
               <card type="content-inner">
-              这里是第1个card，下拉刷新会出现第2个card
+              这里是第1条待办，下拉刷新
               </card>
             </card>
           </v-card-container>
       </div>
     </v-tab>
-    <v-tab name="common-tasks" title="普通任务"
+    <v-tab name="common-tasks" title="任务跟踪"
     distance="55" v-pull-to-refresh="refreshMine">
       <v-layer></v-layer>
       <div class="myTasks">
@@ -66,12 +66,12 @@ export default {
   },
   data () {
     return {
-      title: '任务列表',
+      title: '待办列表',
       tasks: [
         {
           id: 1,
-          title: 'card1',
-          content: '这里是第1个card，下拉刷新会出现第2个card'
+          title: '资金支付',
+          content: '这里是第1条待办，下拉刷新'
         }
       ]
     }
@@ -91,10 +91,10 @@ export default {
         console.log('refreshAll')
         var cardNumber = $(this.$el).find('.card').length
         var cardHTML = '<div class="card">' +
-          '<div class="card-header">card' + cardNumber + '</div>' +
+          '<div class="card-header">资金支付' + '</div>' +
           '<div class="card-content">' +
           '<div class="card-content-inner">' +
-          '这里是第' + cardNumber + '个card，下拉刷新会出现第' + (cardNumber + 1) + '个card。' +
+          '这里是第' + cardNumber + '条待办，下拉刷新' +
           '</div>' +
           '</div>' +
           '</div>'
@@ -109,8 +109,8 @@ export default {
       setTimeout(function () {
         console.log('refreshMine')
         let num = this.length + 1
-        let title = `card${num}`
-        let content = `这里是第${num}个card，下拉刷新会出现第${num + 1}个card。`
+        let title = `资金支付`
+        let content = `这里是第${num}条待办，下拉刷新`
         this.tasks.push({
           id: num,
           title: title,

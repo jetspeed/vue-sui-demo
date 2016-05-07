@@ -34,7 +34,7 @@ export default {
 
 <style lang="sass">
 #islider {
-  height: 135px;
+  height: 40px;
   width: 100%;
   overflow: hidden;
   position: relative;
