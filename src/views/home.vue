@@ -13,6 +13,9 @@
       <bar-item path="/rank" label="授信管理" icon="preview"></bar-item>
       <bar-item path="/invite" label="合同签订" icon="invitefriend"></bar-item>
       </bar>
+      <bar class="home-bar">
+      <bar-item path="/login" label="Login" icon="dianji"></bar-item>
+      </bar>
 
       <!--v-content type="block-title" style="margin: 0 0 0.4rem;
     -webkit-box-shadow: 0 .06rem 0 #ccc;box-shadow: 0 .06rem 0 #ccc;background-color: white;">

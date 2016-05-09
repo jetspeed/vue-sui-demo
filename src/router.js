@@ -12,6 +12,11 @@ export default function (router) {
         require(['./views/welcome'], resolve)
       }
     },
+    '/login': {
+      component (resolve) {
+        require(['./views/login'], resolve)
+      }
+    },
     '/home': {
       component (resolve) {
         require(['./views/home'], resolve)
