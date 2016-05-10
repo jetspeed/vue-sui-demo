@@ -1,10 +1,10 @@
 // src/auth/index.js
 
-import {router} from '../router'
+// import {router} from '../router'
 
 // URL and endpoint constants
-const API_URL = 'http://localhost:3001'
-const SIGNUP_URL = API_URL + '/users/'
+const CACHE_URL = 'http://localhost:3001'
+// const WORKFLOW_URL = 'http://localhost:3002'
 
 export default {
 
@@ -15,29 +15,19 @@ export default {
 
   // Send a request to the login URL and save the returned JWT
   login (context, creds, redirect) {
-    context.$http.get(LOGIN_URL, creds, (data) => {
+    context.$http.get(CACHE_URL + '/cache/user_rights/A0070984.json', creds, (data) => {
+      localStorage.setItem('user_rights', data)
+    })
+
+    context.$http.get(CACHE_URL + '/cache/app_tokens/qlc_workflow.json', creds, (data) => {
       localStorage.setItem('id_token', data.access_token)
 
       this.user.authenticated = true
 
       // Redirect to a specified route
       if (redirect) {
-        router.go(redirect)
-      }
-
-    }).error((err) => {
-      context.error = err
-    })
-  },
-
-  signup (context, creds, redirect) {
-    context.$http.post(SIGNUP_URL, creds, (data) => {
-      localStorage.setItem('id_token', data.id_token)
-
-      this.user.authenticated = true
-
-      if (redirect) {
-        router.go(redirect)
+        alert(redirect)
+        window.router.go(redirect)
       }
 
     }).error((err) => {

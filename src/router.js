@@ -18,6 +18,7 @@ export default function (router) {
       }
     },
     '/home': {
+      name: 'home',
       component (resolve) {
         require(['./views/home'], resolve)
       }
